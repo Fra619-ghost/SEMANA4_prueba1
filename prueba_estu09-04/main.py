@@ -1,7 +1,7 @@
 from clases import Alumno # importar la clase Alumno del archivo clases
 
 
-estudiantes = [] # Se lista estudiantes
+estudiantes = [] # Se crea lista estudiantes
 
 op = 0 # inicializo el operador en 0 para evitar errores a futuro
 
@@ -15,7 +15,7 @@ while op != 4:
         print(" 4- Salir del programa")
         op = int(input("\nIngresa una opción (1-4): "))
         
-        if op == 1: # Se agregan los datos y el numero de estudiantes los cuiales se van a registrar
+        if op == 1: # Se agregan los datos y el numero de estudiantes los cuales se van a registrar
             num_estu = int(input(" Ingresa el número de estudiantes que deseas ingresar: "))
             for i in range(num_estu): # for para ingresar datos en base al numero de estudiantes ingresado por el usuario
                 nombre = input("Digita un nombre: ")
@@ -23,14 +23,14 @@ while op != 4:
                 
                 calificacion = float(input("Ingresa tu calificación: "))
                 if 0 < calificacion <= 100:
-                    alumno = Alumno(nombre, carrera, calificacion) # Constrcutor de la clase Alumno 
+                    alumno = Alumno(nombre, carrera, calificacion) # Constructor de la clase Alumno 
                     estudiantes.append(alumno) #Se agregan  los datos a la lista
                 else:
                     print("La calificación no entra en el rango permitido (0-100).")
             input("Presiona ENTER para continuar...") # simplemnete para que el usuario tenga qie ingresar una tecla para continuar
 
         elif op == 2:
-            if estudiantes: # Se imprimen los datos de la lista estudianyes
+            if estudiantes: # Se imprimen los datos de la lista estudiantes
                 for alumno in estudiantes:
                     print("===============================================================")
                     alumno.imprimir_datos()
