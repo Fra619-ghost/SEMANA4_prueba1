@@ -1,4 +1,4 @@
-from clases import Alumno
+from clases import Alumno # importar la clase Alumno del archivo clases
 
 
 estudiantes = [] # Se lista estudiantes
@@ -17,17 +17,17 @@ while op != 4:
         
         if op == 1: # Se agregan los datos y el numero de estudiantes los cuiales se van a registrar
             num_estu = int(input(" Ingresa el número de estudiantes que deseas ingresar: "))
-            for i in range(num_estu):
+            for i in range(num_estu): # for para ingresar datos en base al numero de estudiantes ingresado por el usuario
                 nombre = input("Digita un nombre: ")
                 carrera = input("Ingresa la carrera del estudiante: ")
                 
                 calificacion = float(input("Ingresa tu calificación: "))
                 if 0 < calificacion <= 100:
-                    alumno = Alumno(nombre, carrera, calificacion)
+                    alumno = Alumno(nombre, carrera, calificacion) # Constrcutor de la clase Alumno 
                     estudiantes.append(alumno) #Se agregan  los datos a la lista
                 else:
                     print("La calificación no entra en el rango permitido (0-100).")
-            input("Presiona ENTER para continuar...")
+            input("Presiona ENTER para continuar...") # simplemnete para que el usuario tenga qie ingresar una tecla para continuar
 
         elif op == 2:
             if estudiantes: # Se imprimen los datos de la lista estudianyes
@@ -43,8 +43,8 @@ while op != 4:
         
         elif op == 3: # Se obtiene el promedio general
             if estudiantes:
-                suma = sum(a.calificación for a in estudiantes)
-                promedio = suma / len(estudiantes)
+                suma = sum(a.calificación for a in estudiantes) # se suman las calificaciones de los estudiantes para luego divirlas 
+                promedio = suma / len(estudiantes)# por la longitud de los estudiantes (numero de estudiantes que se afregó)
                 print(f"\n Promedio general de los estudiantes: {promedio:.2f}")
             else:
                 print(" No hay estudiantes para calcular el promedio.")
@@ -58,6 +58,6 @@ while op != 4:
             print("Opción no válida, por favor ingresa una opción entre 1 y 4.")
             input("Presiona ENTER para continuar...")
 
-    except ValueError:
+    except ValueError: # validación de datos 
         print("Entrada inválida. Asegúrate de ingresar un número válido.")
         input("Presiona ENTER para continuar...")
