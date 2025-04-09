@@ -1,10 +1,10 @@
-class Alumno:
+class Alumno: # Se crea una clase estudiante
     def __init__(self,nombre, carrera, calificación): # Se ocupa para definir propiedades a la clase, se crea el constructor
         self.nombre = nombre
         self.carrera = carrera
         self.calificación = calificación
     
-    def imprimir_datos(self):
+    def imprimir_datos(self): # estas dos son funciones de la clase
        print(" El nombre del estudiante es: ", self.nombre)
        print(" La carrera del estudiante es: ", self.carrera)
        print(" La calificación del estudiante es: ", self.calificación)
